@@ -1,0 +1,16 @@
+MetaFileClass {
+ Name "{F74E315675A954FA}Utopia_KOTH/Models/Textures/Utopia.edds"
+ Author "ares-alienware-"
+ ChangeDate 1980018807
+ Configurations {
+  PAAResourceClass PC {
+   SourceFile "Utopia.paa"
+  }
+  PAAResourceClass XBOX_ONE : PC {
+  }
+  PAAResourceClass PS4 : PC {
+  }
+  PAAResourceClass LINUX : PC {
+  }
+ }
+}
