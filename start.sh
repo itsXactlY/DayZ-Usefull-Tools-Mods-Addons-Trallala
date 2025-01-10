@@ -1,5 +1,5 @@
 #!/bin/bash
-# start_workshopupdate.sh - Start DayZ server with configurations and mods
+./start_workshopupdate.sh # - Start DayZ server with configurations and mods
 
 # ========================
 # Configurations
