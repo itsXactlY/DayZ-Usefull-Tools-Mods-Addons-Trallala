@@ -70,15 +70,14 @@ bool HasPlayersInside(CarScript car)
 bool HasCarCoverNearby(CarScript car)
 {
     vector carPos = car.GetPosition();
-    
-    // First check if we've handled this position before
-    foreach (string key, vector storedPos: handledCarPositions)
-    {
-        if (vector.Distance(storedPos, carPos) < 2.0)
-        {
-            return true;
-        }
-    }
+    string posKey = GetPositionKey(carPos);
+    Print("aLca :: [HasCover] Checking car at position: " + carPos + " with key: " + posKey);
+
+    // if (handledCarPositions.Contains(posKey))
+    // {
+    //     Print("aLca :: [HasCover] Position already handled: " + posKey);
+    //     return true;
+    // }
 
     array<Object> nearbyObjects = new array<Object>();
     array<CargoBase> proxyCargos = new array<CargoBase>();
@@ -89,13 +88,117 @@ bool HasCarCoverNearby(CarScript car)
     {
         if (obj.IsKindOf("CarCoverBase"))
         {
-            // Store this position as handled
-            string posKey = carPos.ToString();
+            Print("aLca :: [HasCover] Found car cover, adding position: " + posKey);
             handledCarPositions.Insert(posKey, carPos);
+            CarPositionStorage.SavePositions(handledCarPositions);
             return true;
         }
     }
+    Print("aLca :: [HasCover] No car cover found.");
     return false;
+}
+
+/**
+ * Creates a unique key for a vector
+ * @param pos The position vector
+ * @return string The unique key
+ */
+string GetPositionKey(vector pos)
+{
+    return pos[0].ToString() + "_" + pos[1].ToString() + "_" + pos[2].ToString();
+}
+
+
+/**
+ * Initial server startup check for uncovered cars across the entire map
+ * Called once during server initialization
+ */
+void CheckAllUncoveredCars()
+{
+    Print("aLca :: [InitC] Running global uncovered car check...");
+    
+    array<Object> allObjects = new array<Object>();
+    GetGame().GetObjectsAtPosition("0 0 0", 50000.0, allObjects, null); // Check entire map
+
+    foreach (Object obj : allObjects)
+    {
+        CarScript car = CarScript.Cast(obj);
+        if (car && car.IsAlive())
+        {
+            if (!HasCarCoverNearby(car) && !HasPlayersInside(car))
+            {
+                Print("aLca :: [InitC] Found uncovered car at position: " + car.GetPosition());
+                car.H4_ServerCarCoverAfterLoad();
+            }
+        }
+    }
+}
+
+/**
+ * Class to handle persistent storage of car positions
+ */
+class CarPositionStorage
+{
+    static const string STORAGE_PATH = "$profile:CarCover/CoveredCarPositions.json";
+    
+    /**
+     * Saves positions to JSON file
+     * @param positions Map of positions to save
+     */
+    static void SavePositions(map<string, vector> positions)
+    {
+        Print("aLca :: [Storage] Attempting to save " + positions.Count() + " car positions");
+        JsonFileLoader<map<string, vector>>.JsonSaveFile(STORAGE_PATH, positions);
+        Print("aLca :: [Storage] Saved " + positions.Count() + " car positions");
+    }
+
+    /**
+     * Loads positions from JSON file
+     * @return map<string, vector> Loaded positions or empty map if file doesn't exist
+     */
+    static map<string, vector> LoadPositions()
+    {
+        map<string, vector> positions = new map<string, vector>();
+        Print("aLca :: [Storage] Attempting to load car positions");
+        if (FileExist(STORAGE_PATH))
+        {
+            JsonFileLoader<map<string, vector>>.JsonLoadFile(STORAGE_PATH, positions);
+            Print("aLca :: [Storage] Loaded " + positions.Count() + " car positions");
+        }
+        else
+        {
+            Print("aLca :: [Storage] No car position file found.");
+        }
+        return positions;
+    }
+        
+        static void PrintStoragePath()
+        {
+                Print("aLca :: [Storage] Storage path: " + STORAGE_PATH);
+        }
+}
+
+/**
+ * Function to cover cars from loaded positions on startup
+ */
+void CoverCarsFromLoadedPositions()
+{
+    Print("aLca :: [InitC] Applying covers to loaded car positions...");
+    foreach (string key, vector pos : handledCarPositions)
+    {
+        array<Object> allObjects = new array<Object>();
+        GetGame().GetObjectsAtPosition(pos, 1.0, allObjects, null); // Check for car at the position
+			
+		foreach (Object obj : allObjects)
+		{
+			CarScript car = CarScript.Cast(obj);
+			if (car && car.IsAlive())
+			{
+				Print("aLca :: [InitC] Applying cover to car at position: " + car.GetPosition());
+				car.H4_ServerCarCoverAfterLoad();
+			}
+		}
+    }
 }
 
 /**
@@ -108,6 +211,18 @@ void main()
     Hive ce = CreateHive();
     if (ce)
         ce.InitOffline();
+        
+    CarPositionStorage.PrintStoragePath();
+
+    // Load saved positions
+    handledCarPositions = CarPositionStorage.LoadPositions();
+        
+	// Apply covers to cars from loaded positions
+	// GetGame().GetCallQueue(CALL_CATEGORY_SYSTEM).CallLater(CoverCarsFromLoadedPositions, 6000, false);
+
+    // Run initial check for all cars on the map
+    GetGame().GetCallQueue(CALL_CATEGORY_SYSTEM).CallLater(CheckAllUncoveredCars, 6000, false); // Run once after 5 seconds after startup in case of wiped server.
+	GetGame().GetCallQueue(CALL_CATEGORY_SYSTEM).CallLater(CoverCarsFromLoadedPositions, 15000, false);
 
     // Set up periodic uncovered car check
     GetGame().GetCallQueue(CALL_CATEGORY_SYSTEM).CallLater(CheckUncoveredCars, 60000, true); // Every 60 seconds
@@ -141,7 +256,7 @@ void main()
  * Custom mission class extending MissionServer
  * Handles player spawning and initial equipment setup
  */
-class CustomMission: MissionServer
+class CustomMission : MissionServer
 {
     /**
      * Sets random health value for equipment items
