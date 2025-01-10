@@ -4,7 +4,7 @@ An automatic car covering system for DayZ servers that works with CarCover mod.
 
 ## Prerequisites
 
-1. Subscribe to GoodCarCover mod on Steam Workshop:
+1. Subscribe to CarCover mod on Steam Workshop:
 - [CarCover on Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2303483532)
 - Install the mod through DayZ Launcher/Steam
 
