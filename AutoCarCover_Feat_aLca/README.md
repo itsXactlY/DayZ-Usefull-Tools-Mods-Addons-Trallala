@@ -1,6 +1,6 @@
 # AutoCover for CarCover
 
-An automatic car covering system for DayZ servers that works with GoodCarCover mod.
+An automatic car covering system for DayZ servers that works with CarCover mod.
 
 ## Prerequisites
 
