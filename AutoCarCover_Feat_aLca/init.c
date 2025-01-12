@@ -73,11 +73,11 @@ bool HasCarCoverNearby(CarScript car)
     string posKey = GetPositionKey(carPos);
     Print("aLca :: [HasCover] Checking car at position: " + carPos + " with key: " + posKey);
 
-    // if (handledCarPositions.Contains(posKey))
-    // {
-    //     Print("aLca :: [HasCover] Position already handled: " + posKey);
-    //     return true;
-    // }
+    if (handledCarPositions.Contains(posKey))
+    {
+         Print("aLca :: [HasCover] Position already handled: " + posKey);
+         return true;
+    }
 
     array<Object> nearbyObjects = new array<Object>();
     array<CargoBase> proxyCargos = new array<CargoBase>();
