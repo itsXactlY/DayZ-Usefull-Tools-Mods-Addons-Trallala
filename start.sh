@@ -20,28 +20,7 @@ readonly MAX_MEMORY=16132
 readonly MOD_LIST=(
   "@CF"
   "@Dabs Framework"
-  "@BaseBuildingPlus"
-  "@BodyBags"
-  "@Breachingcharge"
-  "@CJ187-LootChest"
-  "@Code Lock"
-  "@MuchFramework"
-  "@MuchStuffPack"
-  "@VPPAdminTools"
-  "@Trader"
-  "@TruckFixV2"
-  "@Wilmas BBP Item Drop Fix"
-  "@CJ187-Cars"
-  "@MuchCarKey"
-  "@Forward Operator Gear"
-  "@AmmunitionExpansion"
-  "@EDO_WEAPONS"
-  "@Ear Plugs"
-  "@Inventory Move Sounds"
-  "@MaharlikaPH_Boats"
-  "@Survivor Animations"
   "@CarCover"
-  "@Care Packages V2"
 )
 
 # ========================
