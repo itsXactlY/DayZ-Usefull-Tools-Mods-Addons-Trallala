@@ -1,0 +1,16 @@
+MetaFileClass {
+ Name "{22F29F88271AB81F}Dust_Cloud.edds"
+ Author "komer_pc"
+ ChangeDate 261318878
+ Configurations {
+  PNGResourceClass PC {
+   SourceFile "Dust_Cloud.png"
+  }
+  PNGResourceClass XBOX_ONE : PC {
+  }
+  PNGResourceClass PS4 : PC {
+  }
+  PNGResourceClass LINUX : PC {
+  }
+ }
+}

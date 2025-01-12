@@ -1,0 +1,24 @@
+{
+    "compress": {
+        "exclude": [
+        ],
+        "include": [
+            "\\.xml$",
+            "\\.csv$"
+        ]
+    },
+    "headers": [
+        {
+            "name": "prefix",
+            "value": "HelicopterModScripts"
+        },
+        {
+            "name": "Mikero",
+            "value": "DePbo.dll.7.46"
+        },
+        {
+            "name": "version",
+            "value": "Sat Oct 23 23:58:41 2021"
+        }
+    ]
+}

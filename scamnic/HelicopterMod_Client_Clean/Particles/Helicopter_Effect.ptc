@@ -1,0 +1,63 @@
+EffectDef {
+ Emitors {
+  EmitorDef gravel {
+   ShapeType Box
+   ShapeSize 12 0.5 12
+   ConeAngle 180 180 180
+   MaxNum 100
+   BirthRate 100
+   BirthRateRND 20
+   Material "{D282D69AFA5D1827}HelicopterModScripts/Materials/Dust_Cloud.emat"
+   CenterY 0
+   ScaleX 1
+   ScaleY 1
+   SizeMultiplier 10
+   SizeRND 0
+   RandomRotDir 1
+   RotMultiplier 0
+   StreakFullUV 0
+   VelAngle 0
+   RandomAngle 1
+   Sort 0
+   BillboardingType Full
+   Velocity 2.5
+   VelocityRND 2.5
+   VelAffect 0
+   AirResistance 0
+   GravityMultiply 0
+   GravityMultiplyRND 0
+   Wind 1
+   AnimOnce 0
+   AnimFPS 30
+   LifetimeByAnim 0
+   RandomFrame 0
+   LifeTime 1
+   LifeTimeRND 1
+   AirResistanceMast {
+    0 1 1 1
+   }
+   Color {
+    0 0.6 0.6 0.7 1 0.6 0.6 0.6
+   }
+
+   RotationSpeed {
+    0 0 1 1
+   }
+   VelocityMast {
+    0 1 1 1
+   }
+   Alpha {
+    0 0.2 0.2 0.2 0.4 0.2 1 0.2
+   }
+   Size {
+    0 0.5 1 0.5
+   }
+
+
+   EffectTime 1
+   Repeat 1
+
+
+  }
+ }
+}

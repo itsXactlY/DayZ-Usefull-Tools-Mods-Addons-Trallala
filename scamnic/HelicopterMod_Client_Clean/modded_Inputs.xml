@@ -1,0 +1,97 @@
+        <? xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+        <modded_inputs>
+        <inputs>
+        <actions>
+	    <input name="UASIBHeliForward" loc="STR_SIB_HELI_CYCLIC_FORWARD" />
+		<input name="UASIBHeliBack" loc="STR_SIB_HELI_CYCLIC_BACK" />
+		<input name="UASIBHeliCyclicLeft" loc="STR_SIB_HELI_CYCLIC_LEFT" />
+		<input name="UASIBHeliCyclicRight" loc="STR_SIB_HELI_CYCLIC_RIGHT" />
+		<input name="UASIBHeliLeft" loc="STR_SIB_HELI_RUDDER_LEFT" /> 
+		<input name="UASIBHeliRight" loc="STR_SIB_HELI_RUDDER_RIGHT" />
+		<input name="UASIBHeliUp" loc="STR_SIB_HELI_COLLECTIVE_RAISE" />
+		<input name="UASIBHeliDown" loc="STR_SIB_HELI_COLLECTIVE_LOWER" />
+		<input name="UASIBHeliLookToggle" loc="STR_SIB_HELI_LOOK_ARROUND_TOGGLE" />
+		<input name="UASIBHeliForwardM" loc="STR_SIB_HELI_CYCLIC_FORWARD_MOUSE" />
+		<input name="UASIBHeliBackM" loc="STR_SIB_HELI_CYCLIC_BACK_MOUSE" />
+		<input name="UASIBHeliLeftM" loc="STR_SIB_HELI_LEFT_MOUSE" />
+		<input name="UASIBHeliRightM" loc="STR_SIB_HELI_RIGHT_MOUSE" />
+		</actions>
+        </inputs>
+	
+	
+	    <preset>
+		
+		
+		<input name="UASIBHeliForwardM">
+		<btn name="mDown">
+		</btn>
+		</input>
+		
+		<input name="UASIBHeliBackM">
+		<btn name="mUp">
+		</btn>
+		</input>
+		
+		
+	    <input name="UASIBHeliLeftM">
+		<btn name="mLeft">
+		</btn>
+		</input>
+		
+		
+		<input name="UASIBHeliRightM">
+		<btn name="mRight">
+		</btn>
+		</input>
+		
+		
+	    <input name="UASIBHeliForward">
+        <btn name="kW">
+        </btn>
+        </input>
+		
+		
+		<input name="UASIBHeliBack">
+        <btn name="kS">
+        </btn>
+        </input>
+		
+		
+		<input name="UASIBHeliCyclicLeft">
+        <btn name="kA">
+        </btn>
+        </input>
+		
+		
+		<input name="UASIBHeliCyclicRight">
+        <btn name="kD">
+        </btn>
+        </input>
+		
+		
+		<input name="UASIBHeliLeft">
+        <btn name="kQ">
+        </btn>
+        </input>
+		
+		
+		<input name="UASIBHeliRight">
+        <btn name="kE">
+        </btn>
+        </input>
+		
+		
+		<input name="UASIBHeliUp">
+        <btn name="kLShift">
+        </btn>
+        </input>
+		
+		
+		<input name="UASIBHeliDown">
+        <btn name="kZ">
+        </btn>
+        </input>
+		
+		
+		</preset>
+        </modded_inputs>

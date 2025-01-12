@@ -1,0 +1,336 @@
+FrameWidgetClass HudFrameWidget {
+ clipchildren 0
+ position -0.26106 0.32856
+ size 0.37789 0.26742
+ halign center_ref
+ valign center_ref
+ hexactsize 0
+ vexactsize 0
+ {
+  PanelWidgetClass HelicopterPanel {
+   visible 1
+   clipchildren 0
+   position 103.76299 46.049
+   size 942.12201 195.507
+   valign bottom_ref
+   hexactpos 1
+   vexactpos 1
+   hexactsize 1
+   vexactsize 1
+   fixaspect fixwidth
+   priority 1
+   style blank
+   {
+    ImageWidgetClass HelicopterHudBg {
+     visible 1
+     color 0 0 0 1
+     position -240.92599 -4.45893
+     size 0.68325 1.22234
+     halign center_ref
+     valign center_ref
+     hexactpos 1
+     vexactpos 1
+     hexactsize 0
+     vexactsize 0
+     imageTexture "{203A18D5F4B1DBF9}dta/gui/imagesets/vehicle_hud_shadow.edds"
+     mode blend
+     "src alpha" 1
+     "no wrap" 1
+     stretch 1
+    }
+    PanelWidgetClass HelicopterAltitudePanel {
+     clipchildren 0
+     position 482.651 0.44984
+     size 214.847 194.43799
+     halign right_ref
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     style blank
+     {
+      ImageWidgetClass HelicopterAltitudeDial {
+       visible 1
+       clipchildren 1
+       color 0.6275 0.6275 0.6275 1
+       position -0.11908 18.8678
+       size 209.58101 175.11301
+       halign center_ref
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       image0 ""
+       imageTexture "{C920A294A5D12DB3}HelicopterModScripts/GUI/background.edds"
+       mode blend
+       "src alpha" 1
+       "no wrap" 1
+       stretch 1
+       filter 1
+       nocache 0
+       "Transition width" 0
+       Progress 0.8
+       {
+        ImageWidgetClass HelicopterAltitudeDialRedline {
+         visible 1
+         clipchildren 0
+         position 0.66156 -0.66157
+         size 1 1.00332
+         halign center_ref
+         hexactpos 1
+         vexactpos 1
+         hexactsize 0
+         vexactsize 0
+         priority 1
+         image0 ""
+         imageTexture "{CAFAD881DAC47EF6}HelicopterModScripts/GUI/altitude_numbers.edds"
+         mode additive
+         "src alpha" 1
+         "no wrap" 1
+         stretch 1
+         "flip u" 0
+         filter 0
+         nocache 0
+         pivot 0 0
+         "Transition width" 0
+        }
+        TextWidgetClass HelicopterAltitudeText {
+         visible 1
+         clipchildren 0
+         position 0.00001 176.425
+         size 1 17.8203
+         halign center_ref
+         valign bottom_ref
+         hexactpos 1
+         vexactpos 1
+         hexactsize 0
+         vexactsize 1
+         style Bold
+         text "0"
+         font "gui/fonts/sdf_MetronBook72"
+         "shadow offset" 1 1
+         "italic text" 0
+         "exact text" 0
+         "size to text h" 0
+         "size to text v" 0
+         "text halign" center
+         "text valign" center
+        }
+        ImageWidgetClass HelicopterAltitudePointer {
+         visible 1
+         clipchildren 0
+         position 0.0073 -0.12044
+         size 14.4805 72.28539
+         halign center_ref
+         valign center_ref
+         hexactpos 0
+         vexactpos 0
+         hexactsize 1
+         vexactsize 1
+         image0 "set:dayz_gui image:large_pointer"
+         mode blend
+         "src alpha" 1
+         "no wrap" 1
+         stretch 1
+         filter 1
+         nocache 0
+         pivot 0.5 0.77
+        }
+       }
+      }
+     }
+    }
+    PanelWidgetClass HelicopterSpeedPanel {
+     clipchildren 0
+     position 724.133 0.55568
+     size 214 194.43799
+     halign right_ref
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     style blank
+     {
+      ImageWidgetClass HelicopterSpeedDial {
+       visible 1
+       clipchildren 1
+       color 0.6275 0.6275 0.6275 1
+       position -0.11908 18.8678
+       size 209.58101 175.11301
+       halign center_ref
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       image0 ""
+       imageTexture "{C920A294A5D12DB3}HelicopterModScripts/GUI/background.edds"
+       mode blend
+       "src alpha" 1
+       "no wrap" 1
+       stretch 1
+       filter 1
+       nocache 0
+       "Transition width" 0
+       Progress 0.8
+       {
+        ImageWidgetClass HelicopterSpeedDialRedline {
+         visible 1
+         clipchildren 0
+         position 0.66156 -0.66157
+         size 1 1.00332
+         halign center_ref
+         hexactpos 1
+         vexactpos 1
+         hexactsize 0
+         vexactsize 0
+         priority 1
+         image0 ""
+         imageTexture "{98A754DC3429ACB0}HelicopterModScripts/GUI/speed_numbers.edds"
+         mode additive
+         "src alpha" 1
+         "no wrap" 1
+         stretch 1
+         "flip u" 0
+         filter 0
+         nocache 0
+         pivot 0 0
+         "Transition width" 0
+        }
+        TextWidgetClass HelicopterSpeedText {
+         visible 1
+         clipchildren 0
+         position 0.00001 176.425
+         size 0.99 17.8203
+         halign center_ref
+         valign bottom_ref
+         hexactpos 1
+         vexactpos 1
+         hexactsize 0
+         vexactsize 1
+         style Bold
+         text "0"
+         font "gui/fonts/sdf_MetronBook72"
+         "shadow offset" 1 1
+         "italic text" 0
+         "exact text" 0
+         "size to text h" 0
+         "size to text v" 0
+         "text halign" center
+         "text valign" center
+        }
+        ImageWidgetClass HelicopterSpeedPointer {
+         visible 1
+         clipchildren 0
+         position 0.0073 -0.1304
+         size 14.4805 71.28999
+         halign center_ref
+         valign center_ref
+         hexactpos 0
+         vexactpos 0
+         hexactsize 1
+         vexactsize 1
+         image0 "set:dayz_gui image:large_pointer"
+         mode blend
+         "src alpha" 1
+         "no wrap" 1
+         stretch 1
+         filter 1
+         nocache 0
+         pivot 0.5 0.77
+        }
+       }
+      }
+     }
+    }
+    PanelWidgetClass HelicopterFuelIndicator {
+     visible 1
+     position -238.03 138.62401
+     size 68 75.6601
+     halign center_ref
+     hexactpos 1
+     vexactpos 1
+     hexactsize 1
+     vexactsize 1
+     style blank
+     {
+      ImageWidgetClass HelicopterFuelDial {
+       color 0.6275 0.6275 0.6275 1
+       position 0 0
+       size 68 56
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       image0 ""
+       imageTexture "{22721E7344C22D6A}dta/gui/textures/cardial_small.edds"
+       mode blend
+       "src alpha" 1
+       "no wrap" 1
+       stretch 1
+       "flip u" 1
+       Mask "{48BFB4B086E16C62}dta/gui/textures/cardial_small_mask.edds"
+       "Transition width" 0.8
+       Progress 0.75
+      }
+      ImageWidgetClass HelicopterFuelDialLow {
+       color 1 0 0 1
+       position 0 0
+       size 68 56
+       hexactpos 1
+       vexactpos 1
+       hexactsize 1
+       vexactsize 1
+       priority 1
+       image0 ""
+       imageTexture "{22721E7344C22D6A}dta/gui/textures/cardial_small.edds"
+       mode blend
+       "src alpha" 1
+       "no wrap" 1
+       stretch 1
+       "flip u" 0
+       filter 1
+       Mask "{48BFB4B086E16C62}dta/gui/textures/cardial_small_mask.edds"
+       "Transition width" 0.2
+       Progress 0.25
+      }
+      ImageWidgetClass HelicopterFuelPointer {
+       clipchildren 0
+       position 0 -0.16
+       size 13 40
+       halign center_ref
+       valign center_ref
+       hexactpos 1
+       vexactpos 0
+       hexactsize 1
+       vexactsize 1
+       image0 "set:dayz_gui image:small_pointer"
+       mode blend
+       "src alpha" 1
+       filter 1
+       rotation 0 0 -140
+       pivot 0.5 0.7
+      }
+      ImageWidgetClass HelicopterFuelLight {
+       position 0 0
+       size 30 30
+       halign center_ref
+       valign bottom_ref
+       hexactpos 0
+       vexactpos 0
+       hexactsize 1
+       vexactsize 1
+       fixaspect inside
+       image0 "set:dayz_gui image:fuel"
+       mode blend
+       "src alpha" 1
+       "no wrap" 1
+       stretch 1
+       filter 1
+       nocache 0
+      }
+     }
+    }
+   }
+  }
+ }
+}
