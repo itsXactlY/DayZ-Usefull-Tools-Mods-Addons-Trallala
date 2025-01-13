@@ -12,12 +12,13 @@ An automatic car covering system for DayZ servers that works with CarCover mod.
 
 ### Step 1: Install PBO
 Copy `AutoCoverForGoodCarCover.pbo` to:
-Steam/steamapps/common/DayZServer/addons/
+Steam/steamapps/common/DayZServer/ServerMods/ # Or any folder u like to use.
 
 ### Step 2: Configure init.c
 1. Navigate to:
 Steam/steamapps/common/DayZServer/mpmissions/dayzOffline.chernarusplus/
 2. Merge or replace the provided `init.c` with your existing one
+3. Start Server with `-serverMod=AutoCoverForGoodCarCover`
 
 ## Features
 
