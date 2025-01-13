@@ -42,10 +42,22 @@ join_mods() {
   echo "\"$*\"" # Join elements and wrap the result in quotes
 }
 
+join_server_mods() {
+  local server_mods=()
+  for mod in "${SERVER_MODS[@]}"; do
+    server_mods+=("$MODS_FOLDER/$mod")
+  done
+  local IFS=";"
+  echo "${server_mods[*]}"
+}
+
 # Build DayZ server options
 build_options() {
-  local mods=$(join_mods "${MOD_LIST[@]}") # Properly formatted mod list
-  echo "-config=$CONFIG_FILE -profiles=$PROFILES_FOLDER -mod=$mods -nosound -noPause -cpuCount=$CPU_COUNT -maxMem=$MAX_MEMORY -dologs -logs -adminlog -scriptDebug -persist"
+  local mods
+  mods=$(join_mods)
+  local server_mods
+  server_mods=$(join_server_mods)
+  echo "-config=$CONFIG_FILE -profiles=$PROFILES_FOLDER \"-serverMod=$server_mods\" \"-mod=$mods\" -nosound -noPause -cpuCount=$CPU_COUNT -maxMem=$MAX_MEMORY -dologs -logs -adminlog -scriptDebug"
 }
 
 # ========================
