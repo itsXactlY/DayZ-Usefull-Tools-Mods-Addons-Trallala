@@ -18,7 +18,7 @@ Copy `AutoCoverForGoodCarCover.pbo` to:
 1. Navigate to:
 Steam/steamapps/common/DayZServer/mpmissions/dayzOffline.chernarusplus/
 2. Merge or replace the provided `init.c` with your existing one
-3. Start Server with `-serverMod=AutoCoverForGoodCarCover`
+3. Start Server with `-serverMod=../ServerMods/@AutoCoverForGoodCarCover`
 
 ## Features
 
