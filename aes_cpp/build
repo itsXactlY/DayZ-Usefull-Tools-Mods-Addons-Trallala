@@ -1,0 +1,1 @@
+g++ -o KeyManager KeyManager.cpp -lcrypto -lssl
