@@ -1,0 +1,981 @@
+{
+    "m_Version": 9,
+    "DisplayName": "BO_SNIPER_RIFLES",
+    "Icon": "Gun",
+    "Color": "FBFCFEFF",
+    "InitStockPercent": 75.0,
+    "Items": [
+        {
+            "ClassName": "BO_M200_Grey",
+            "MaxPriceThreshold": 3200,
+            "MinPriceThreshold": 1600,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_Mag_M200_7rnd"
+            ],
+            "Variants": [
+                "BO_M200_Black"
+            ]
+        },
+        {
+            "ClassName": "BO_M200_Black",
+            "MaxPriceThreshold": 3200,
+            "MinPriceThreshold": 1600,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_Mag_M200_7rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_AX50",
+            "MaxPriceThreshold": 4000,
+            "MinPriceThreshold": 2000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_AccuPowerOptic",
+                "BO_Mag_AX50_5Rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_M82A1",
+            "MaxPriceThreshold": 4200,
+            "MinPriceThreshold": 2100,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_AccuPowerOptic",
+                "BO_Mag_M82A1_10Rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_Kar98K",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_M300",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_AccuPowerOptic",
+                "BO_Mag_M300_7rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_MK12",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_AccuPowerOptic",
+                "BO_Mag_MK12_20Rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_R700",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_AccuPowerOptic",
+                "BO_Mag_R700_5rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_R700Timberwolf",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_AccuPowerOptic",
+                "BO_Mag_R700Timberwolf_8rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_WA2000",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_AccuPowerOptic",
+                "BO_Mag_WA2000_6Rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_SVD",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "Mag_SVD_10Rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_TheFix",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_TheFix_Suppressor",
+                "BO_TheFix_Optic",
+                "BO_Mag_TheFix_10rnd"
+            ],
+            "Variants": [
+                "BO_TheFix_BlueTiger",
+                "BO_TheFix_RedTiger",
+                "BO_TheFix_Multicam"
+            ]
+        },
+        {
+            "ClassName": "BO_TheFix_BlueTiger",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_TheFix_Suppressor",
+                "BO_TheFix_Optic",
+                "BO_Mag_TheFix_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_TheFix_RedTiger",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_TheFix_Suppressor",
+                "BO_TheFix_Optic",
+                "BO_Mag_TheFix_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_TheFix_Multicam",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_TheFix_Suppressor",
+                "BO_TheFix_Optic",
+                "BO_Mag_TheFix_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_M24",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_M24_5rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_AX50_Black",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_AX50_5rnd"
+            ],
+            "Variants": [
+                "BO_AX50_RedTiger",
+                "BO_AX50_BlueTiger",
+                "BO_AX50_Fall"
+            ]
+        },
+        {
+            "ClassName": "BO_AX50_RedTiger",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_AX50_5rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_AX50_BlueTiger",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_AX50_5rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_AX50_Fall",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_AX50_5rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_M82A1",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_M82A1_10rnd"
+            ],
+            "Variants": [
+                "BO_M82A1_Black",
+                "BO_M82A1_RedTiger",
+                "BO_M82A1_BlueTiger",
+                "BO_M82A1_GreenTiger",
+                "BO_M82A1_Desert",
+                "BO_M82A1_Snow"
+            ]
+        },
+        {
+            "ClassName": "BO_M82A1_Black",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_M82A1_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_M82A1_RedTiger",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_M82A1_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_M82A1_BlueTiger",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_M82A1_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_M82A1_GreenTiger",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_M82A1_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_M82A1_Desert",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_M82A1_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_M82A1_Snow",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_M82A1_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_AS50",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_AS50_10rnd"
+            ],
+            "Variants": [
+                "BO_AS50_Camo1",
+                "BO_AS50_Camo2",
+                "BO_AS50_Camo3",
+                "BO_AS50_Camo4",
+                "BO_AS50_RedTiger",
+                "BO_AS50_BlueTiger",
+                "BO_AS50_Fall"
+            ]
+        },
+        {
+            "ClassName": "BO_AS50_Camo1",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_AS50_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_AS50_Camo2",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_AS50_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_AS50_Camo3",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_AS50_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_AS50_Camo4",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_AS50_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_AS50_RedTiger",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_AS50_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_AS50_BlueTiger",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_AS50_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_AS50_Fall",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_AS50_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_CS5",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_CS5_5rnd",
+                "BO_CS5_Suppressor"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_M40A1",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20"
+            ],
+            "Variants": [
+                "BO_M40A1_Green",
+                "BO_M40A1_Digital"
+            ]
+        },
+        {
+            "ClassName": "BO_M40A1_Green",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_M40A1_Digital",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_SVU",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "Mag_SVD_10Rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_L115A3",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_L115A3_5rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_AlligatorSniper",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_AlligatorSniper_5rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_OSV",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_OSV_5rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_SuperSniper",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_SuperSniper_5rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_Delta5",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_Delta5_10rnd"
+            ],
+            "Variants": [
+                "BO_Delta5_Camo1",
+                "BO_Delta5_Camo2",
+                "BO_Delta5_Camo3",
+                "BO_Delta5_Camo4",
+                "BO_Delta5_Camo5",
+                "BO_Delta5_Camo6",
+                "BO_Delta5_Camo7",
+                "BO_Delta5_Camo8",
+                "BO_Delta5_Camo9",
+                "BO_Delta5_Camo10"
+            ]
+        },
+        {
+            "ClassName": "BO_Delta5_Camo1",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_Delta5_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_Delta5_Camo2",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_Delta5_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_Delta5_Camo3",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_Delta5_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_Delta5_Camo4",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_Delta5_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_Delta5_Camo5",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_Delta5_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_Delta5_Camo6",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_Delta5_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_Delta5_Camo7",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_Delta5_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_Delta5_Camo8",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_Delta5_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_Delta5_Camo9",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_Delta5_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_Delta5_Camo10",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_Delta5_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_VSSK",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_VSSK_5rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_DVL10M1",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_DVL10M1_5rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_GM6Lynx",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_GM6Lynx_5rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_L96",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_L96_5rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_M96",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_M96_5rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_Ruger",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_Ruger_5rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_SRSA2",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_SRSA2_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_T5000",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_T5000_5rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_Tac21",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_Tac21_5rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_MRAD",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_MRAD_10rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_SAKOTRG",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_SAKOTRG_5rnd"
+            ],
+            "Variants": []
+        },
+        {
+            "ClassName": "BO_SCAR20S",
+            "MaxPriceThreshold": 10000,
+            "MinPriceThreshold": 5000,
+            "SellPricePercent": -1,
+            "MaxStockThreshold": 100,
+            "MinStockThreshold": 1,
+            "QuantityPercent": -1,
+            "SpawnAttachments": [
+                "BO_ShmidtBender20",
+                "BO_Mag_SCAR20S_5rnd"
+            ],
+            "Variants": []
+        }
+    ]
+}
