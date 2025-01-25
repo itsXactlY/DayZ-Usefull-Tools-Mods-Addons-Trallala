@@ -1,5 +1,5 @@
 #!/bin/bash
-./start_workshopupdate.sh # - Start DayZ server with configurations and mods
+./start_workshopupdate.sh # - Start DayZ Server/Workshop update(s)
 
 # ========================
 # Configurations
@@ -8,19 +8,18 @@ readonly SERVER_BINARY="./DayZServer"
 readonly CONFIG_FILE="serverDZ.cfg"
 readonly PROFILES_FOLDER="./profile"
 readonly LOG_FILE="server_startup.log"
-readonly CPU_COUNT=8
-readonly MAX_MEMORY=16132
+readonly CPU_COUNT=4
+readonly MAX_MEMORY=8096
+readonly MODS_FOLDER="../DayZServer_Mods"
 
 # Mod list (easily extendable)
-#
-#  "@Paragon Gear and Armor"
-#  "@SNAFU_Weapons"
-#  "@RevGuns"
-#  "@Traveling Trader"
 readonly MOD_LIST=(
   "@CF"
-  "@Dabs Framework"
-  "@CarCover"
+  "@CarCover" # Example
+)
+
+readonly SERVER_MODS=(
+  "@CarCoveraLca" # Another Server-Side Mod only example
 )
 
 # ========================
@@ -36,10 +35,14 @@ fail() { log "Error: $1"; exit "${2:-1}"; }
 # Ensure required files exist
 ensure_exists() { [[ -e "$1" ]] || fail "$2 not found: $1" "$3"; }
 
-# Join mods into a single string with a semicolon delimiter, enclosed in double quotes
+# Join mods into a single string with a semicolon delimiter, prefixed by the MODS_FOLDER path
 join_mods() {
+  local mods=()
+  for mod in "${MOD_LIST[@]}"; do
+    mods+=("$MODS_FOLDER/$mod")
+  done
   local IFS=";" # Use semicolon as the delimiter
-  echo "\"$*\"" # Join elements and wrap the result in quotes
+  echo "${mods[*]}" # Join elements
 }
 
 join_server_mods() {
@@ -57,7 +60,14 @@ build_options() {
   mods=$(join_mods)
   local server_mods
   server_mods=$(join_server_mods)
-  echo "-config=$CONFIG_FILE -profiles=$PROFILES_FOLDER \"-serverMod=$server_mods\" \"-mod=$mods\" -nosound -noPause -cpuCount=$CPU_COUNT -maxMem=$MAX_MEMORY -dologs -logs -adminlog -scriptDebug"
+  echo "-config=$CONFIG_FILE -profiles=$PROFILES_FOLDER \"-serverMod=$server_mods\" \"-mod=$mods\" -nosound -noPause -cpuCount=$CPU_COUNT -maxMem=$MAX_MEMORY" # -dologs -adminlog -scriptDebug"
+}
+
+# Delete log files in profiles folder
+delete_log_files() {
+  log "Deleting log files in profiles folder..."
+  find "$PROFILES_FOLDER" -type f \( -name "*.log" -o -name "*.RPT" -o -name "*.ADM" -o -name "*.mdmp" \) -delete
+  log "Log files deleted successfully."
 }
 
 # ========================
@@ -67,6 +77,12 @@ build_options() {
 # Validate required files
 ensure_exists "$SERVER_BINARY" "Server binary" 101
 ensure_exists "$CONFIG_FILE" "Configuration file" 102
+
+# Validate mods folder
+ensure_exists "$MODS_FOLDER" "Mods folder" 103
+
+# Delete log files in profiles folder
+delete_log_files
 
 # Build server options
 OPTIONS=$(build_options)
