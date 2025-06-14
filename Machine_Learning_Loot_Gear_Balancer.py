@@ -690,27 +690,27 @@ JSON for {item_name}:"""
         
         return report
     
-def save_balanced_xml(self, output_path: Optional[str] = None) -> Path:
-        """Save the balanced XML with backup"""
-        if output_path is None:
-            timestamp = int(time.time())
-            # Create output filename based on input filename
-            input_name = self.types_xml_path.stem  # gets filename without extension
-            output_path = self.types_xml_path.parent / f'{input_name}_gear_balanced_{timestamp}.xml'
-        
-        output_path = Path(output_path)
-        
-        # Create backup with original filename preserved
-        input_name = self.types_xml_path.stem
-        backup_path = self.types_xml_path.parent / f'{input_name}_backup_{int(time.time())}.xml'
-        shutil.copy2(self.types_xml_path, backup_path)
-        print(f"📁 Backup created: {backup_path}")
-        
-        # Save balanced version
-        self.tree.write(output_path, encoding='utf-8', xml_declaration=True)
-        print(f"💾 Balanced XML saved: {output_path}")
-        
-        return output_path
+    def save_balanced_xml(self, output_path: Optional[str] = None) -> Path:
+            """Save the balanced XML with backup"""
+            if output_path is None:
+                timestamp = int(time.time())
+                # Create output filename based on input filename
+                input_name = self.types_xml_path.stem  # gets filename without extension
+                output_path = self.types_xml_path.parent / f'{input_name}_gear_balanced_{timestamp}.xml'
+            
+            output_path = Path(output_path)
+            
+            # Create backup with original filename preserved
+            input_name = self.types_xml_path.stem
+            backup_path = self.types_xml_path.parent / f'{input_name}_backup_{int(time.time())}.xml'
+            shutil.copy2(self.types_xml_path, backup_path)
+            print(f"📁 Backup created: {backup_path}")
+            
+            # Save balanced version
+            self.tree.write(output_path, encoding='utf-8', xml_declaration=True)
+            print(f"💾 Balanced XML saved: {output_path}")
+            
+            return output_path
 
 
 def process_multiple_files():
