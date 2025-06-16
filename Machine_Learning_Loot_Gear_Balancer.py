@@ -192,57 +192,129 @@ class OptimizedOllamaGearBalancer:
         except (ValueError, TypeError):
             return False
     
+#     def analyze_single_gear(self, item_name: str, current_data: Dict) -> Dict:
+#         """Analyze a single gear item with enhanced prompt for gear/equipment"""
+        
+#         if item_name in self.analysis_cache:
+#             return self.analysis_cache[item_name]
+        
+#         prompt = f"""You are a DayZ server administrator balancing gear and equipment spawns.
+
+# ITEM: {item_name}
+# CURRENT: Nominal={current_data['nominal']}, Min={current_data['min']}, Tiers={current_data['tiers']}, Category={current_data['category']}
+
+# GEAR CLASSIFICATION RULES:
+# - Tier 1 (Civilian): Common clothes, basic backpacks, civilian gear - Nominal 20-50
+# - Tier 2 (Police): Police gear, tactical clothes, police backpacks - Nominal 10-25  
+# - Tier 3 (Military): Military clothes, combat gear, tactical backpacks - Nominal 5-15
+# - Tier 4 (Special): Elite military gear, rare equipment, high-end backpacks - Nominal 2-8
+# - Tier 5 (Extreme): Ultra-rare gear, experimental equipment - Nominal 1-3
+
+# ITEM TYPE CLASSIFICATION:
+# - Backpacks: Storage capacity determines tier (larger = higher tier)
+#   * Small bags (school, canvas) = Tier 1-2, Nominal 15-30
+#   * Medium backpacks (hiking, field) = Tier 2-3, Nominal 8-18  
+#   * Large backpacks (assault, mountain) = Tier 3-4, Nominal 3-10
+#   * Tactical/Military packs = Tier 4-5, Nominal 1-5
+
+# - Clothing: Protection and rarity determines tier
+#   * Civilian clothes = Tier 1, Nominal 25-50
+#   * Work/utility clothes = Tier 2, Nominal 15-30
+#   * Tactical/Police gear = Tier 3, Nominal 8-15
+#   * Military uniforms = Tier 4, Nominal 3-8
+#   * Special forces gear = Tier 5, Nominal 1-3
+
+# - Equipment/Tools: Functionality and rarity
+#   * Basic tools = Tier 1-2, Nominal 20-40
+#   * Professional equipment = Tier 3, Nominal 8-15
+#   * Military equipment = Tier 4-5, Nominal 2-8
+
+# - Storage/Containers: Size and protection level
+#   * Basic containers = Tier 1-2, Nominal 15-25
+#   * Protective cases = Tier 3-4, Nominal 5-12
+#   * Military storage = Tier 4-5, Nominal 2-5
+
+# EXAMPLES:
+# - "SchoolBackpack" = {{"tier":1,"nominal":25,"min":8}}
+# - "AssaultBackpack" = {{"tier":4,"nominal":4,"min":1}}
+# - "TacticalVest_Black" = {{"tier":3,"nominal":8,"min":3}}
+# - "PolicePants" = {{"tier":2,"nominal":15,"min":5}}
+# - "GhillieSuit_Woodland" = {{"tier":5,"nominal":2,"min":0}}
+
+# RESPOND WITH ONLY THIS EXACT JSON FORMAT:
+# {{"tier":3,"nominal":8,"min":3,"item_type":"backpack","category":"equipment","reasoning":"Military grade equipment"}}
+
+# JSON for {item_name}:"""
+
+#         response = self.query_ollama_single(prompt)
+        
+#         if response:
+#             analysis = self.extract_json_from_response(response, item_name)
+#             if analysis:
+#                 # Ensure all required fields exist
+#                 analysis.setdefault('item_type', 'unknown')
+#                 analysis.setdefault('category', current_data.get('category', 'equipment'))
+#                 analysis.setdefault('reasoning', 'AI analysis')
+                
+#                 self.analysis_cache[item_name] = analysis
+#                 return analysis
+#             else:
+#                 print(f"    Failed to extract valid JSON for {item_name}")
+        
+#         return self.fallback_analysis(item_name, current_data)
+
     def analyze_single_gear(self, item_name: str, current_data: Dict) -> Dict:
-        """Analyze a single gear item with enhanced prompt for gear/equipment"""
+        """Analyze a single gear item with enhanced prompt for proper civilian/military classification"""
         
         if item_name in self.analysis_cache:
             return self.analysis_cache[item_name]
         
-        prompt = f"""You are a DayZ server administrator balancing gear and equipment spawns.
+        prompt = f"""You are a DayZ server administrator balancing CIVILIAN and UTILITY items.
 
 ITEM: {item_name}
-CURRENT: Nominal={current_data['nominal']}, Min={current_data['min']}, Tiers={current_data['tiers']}, Category={current_data['category']}
+CURRENT: Nominal={current_data['nominal']}, Min={current_data['min']}, Category={current_data['category']}
 
-GEAR CLASSIFICATION RULES:
-- Tier 1 (Civilian): Common clothes, basic backpacks, civilian gear - Nominal 20-50
-- Tier 2 (Police): Police gear, tactical clothes, police backpacks - Nominal 10-25  
-- Tier 3 (Military): Military clothes, combat gear, tactical backpacks - Nominal 5-15
-- Tier 4 (Special): Elite military gear, rare equipment, high-end backpacks - Nominal 2-8
-- Tier 5 (Extreme): Ultra-rare gear, experimental equipment - Nominal 1-3
+CRITICAL: This system is for CIVILIAN GEAR and UTILITY ITEMS, NOT military equipment.
 
-ITEM TYPE CLASSIFICATION:
-- Backpacks: Storage capacity determines tier (larger = higher tier)
-  * Small bags (school, canvas) = Tier 1-2, Nominal 15-30
-  * Medium backpacks (hiking, field) = Tier 2-3, Nominal 8-18  
-  * Large backpacks (assault, mountain) = Tier 3-4, Nominal 3-10
-  * Tactical/Military packs = Tier 4-5, Nominal 1-5
+CIVILIAN ITEM CLASSIFICATION:
+- Tier 1 (Common Civilian): Everyday items everyone uses - Nominal 25-50
+  * Sunglasses, basic clothing, school bags, civilian shoes
+  * Sleeping bags, basic tools, cooking pots, civilian backpacks
+  * T-shirts, jeans, sneakers, baseball caps
 
-- Clothing: Protection and rarity determines tier
-  * Civilian clothes = Tier 1, Nominal 25-50
-  * Work/utility clothes = Tier 2, Nominal 15-30
-  * Tactical/Police gear = Tier 3, Nominal 8-15
-  * Military uniforms = Tier 4, Nominal 3-8
-  * Special forces gear = Tier 5, Nominal 1-3
+- Tier 2 (Utility/Work): Practical work items - Nominal 15-30  
+  * Work clothes, hiking gear, larger civilian backpacks
+  * Professional tools, camping equipment, work boots
+  * Utility vests, cargo pants, work jackets
 
-- Equipment/Tools: Functionality and rarity
-  * Basic tools = Tier 1-2, Nominal 20-40
-  * Professional equipment = Tier 3, Nominal 8-15
-  * Military equipment = Tier 4-5, Nominal 2-8
+- Tier 3 (Specialized Civilian): Higher-end civilian gear - Nominal 8-15
+  * Premium outdoor gear, professional equipment
+  * Specialized tools, high-end civilian clothing
+  * Large hiking backpacks, tactical-style civilian gear
 
-- Storage/Containers: Size and protection level
-  * Basic containers = Tier 1-2, Nominal 15-25
-  * Protective cases = Tier 3-4, Nominal 5-12
-  * Military storage = Tier 4-5, Nominal 2-5
+DO NOT CLASSIFY AS MILITARY UNLESS EXPLICITLY MILITARY:
+- "Sunglasses" = Tier 1-2 Civilian (Nominal 30-40)
+- "Sleeping bag" = Tier 1-2 Civilian (Nominal 2-5)
+- "Dutch oven" = Tier 1 Civilian cooking (Nominal 5-15)
+- "Sling" (melee) = Tier 1 Civilian tool (Nominal 5-20)
+- "Thermos" = Tier 1/2 Civilian utility (Nominal 15-25)
+
+ONLY Tier 4-5 for ACTUAL MILITARY items:
+- Items with "Military", "Combat", "Tactical", "Army" in name
+- Ballistic vests, military uniforms, combat helmets
+- Military-issued equipment and gear
 
 EXAMPLES:
-- "SchoolBackpack" = {{"tier":1,"nominal":25,"min":8}}
-- "AssaultBackpack" = {{"tier":4,"nominal":4,"min":1}}
-- "TacticalVest_Black" = {{"tier":3,"nominal":8,"min":3}}
-- "PolicePants" = {{"tier":2,"nominal":15,"min":5}}
-- "GhillieSuit_Woodland" = {{"tier":5,"nominal":2,"min":0}}
+- "Sunglasses_Red" = {{"tier":1,"nominal":35,"min":12}}
+- "SleepingBag_Green" = {{"tier":2,"nominal":3,"min":2}}
+- "DutchOven" = {{"tier":1,"nominal":7,"min":5}}
+- "MeleeSling_Black" = {{"tier":1,"nominal":20,"min":7}}
+- "Thermos_Blue" = {{"tier":1,"nominal":30,"min":10}}
+- "SchoolBackpack" = {{"tier":1,"nominal":5,"min":1}}
+- "HikingBackpack" = {{"tier":2,"nominal":18,"min":6}}
 
 RESPOND WITH ONLY THIS EXACT JSON FORMAT:
-{{"tier":3,"nominal":8,"min":3,"item_type":"backpack","category":"equipment","reasoning":"Military grade equipment"}}
+{{"tier":1,"nominal":30,"min":10,"item_type":"civilian","category":"equipment","reasoning":"Common civilian utility item"}}
 
 JSON for {item_name}:"""
 
@@ -252,7 +324,7 @@ JSON for {item_name}:"""
             analysis = self.extract_json_from_response(response, item_name)
             if analysis:
                 # Ensure all required fields exist
-                analysis.setdefault('item_type', 'unknown')
+                analysis.setdefault('item_type', 'civilian')
                 analysis.setdefault('category', current_data.get('category', 'equipment'))
                 analysis.setdefault('reasoning', 'AI analysis')
                 
@@ -260,9 +332,9 @@ JSON for {item_name}:"""
                 return analysis
             else:
                 print(f"    Failed to extract valid JSON for {item_name}")
-        
-        return self.fallback_analysis(item_name, current_data)
     
+        return self.fallback_analysis(item_name, current_data)
+
     def fallback_analysis(self, item_name: str, current_data: Dict) -> Dict:
         """Enhanced fallback analysis based on item name patterns and categories"""
         name_lower = item_name.lower()
@@ -377,15 +449,33 @@ JSON for {item_name}:"""
             "reasoning": "Default classification - unknown gear type"
         }
     
-    def collect_gear_items(self, filter_pattern: str = None) -> List[ET.Element]:
-        """Collect all gear items (clothes, containers, equipment) with optional filtering"""
+    def collect_gear_items(self, filter_pattern: str = None, exclude_patterns: List[str] = None) -> List[ET.Element]:
+        """Collect all gear items (clothes, containers, equipment) with optional filtering and exclusions"""
         gear_items = []
         gear_categories = ['clothes', 'containers', 'equipment', 'tools']
+        
+        if exclude_patterns is None:
+            exclude_patterns = []
         
         for item in self.root.findall('type'):
             name = item.get('name')
             
+            # Skip items with nominal=0
+            nominal_elem = item.find('nominal')
+            if nominal_elem is not None:
+                try:
+                    nominal_value = int(nominal_elem.text)
+                    if nominal_value == 0:
+                        continue  # Skip items with nominal=0
+                except (ValueError, TypeError):
+                    continue  # Skip items with invalid nominal values
+            
+            # Apply include filter
             if filter_pattern and filter_pattern not in name:
+                continue
+            
+            # Apply exclude filters
+            if exclude_patterns and any(exclude_pattern.lower() in name.lower() for exclude_pattern in exclude_patterns):
                 continue
             
             category = item.find('category')
@@ -402,7 +492,6 @@ JSON for {item_name}:"""
                 gear_items.append(item)
         
         return gear_items
-    
     def extract_current_data(self, item: ET.Element) -> Dict:
         """Extract current gear data from XML element"""
         category_elem = item.find('category')
@@ -430,7 +519,7 @@ JSON for {item_name}:"""
             print(f"    Checkpoint saved at {processed_count} items")
         except Exception as e:
             print(f"    Failed to save checkpoint: {e}")
-    
+        
     def load_checkpoint(self) -> Optional[Dict]:
         """Load previous checkpoint if available"""
         checkpoint_path = Path(self.checkpoint_file)
@@ -445,15 +534,19 @@ JSON for {item_name}:"""
             except Exception as e:
                 print(f"Failed to load checkpoint: {e}")
         return None
-    
-    def process_gear_with_progress(self, filter_pattern: str = None, resume: bool = True) -> List[Dict]:
+
+    def process_gear_with_progress(self, filter_pattern: str = None, exclude_patterns: List[str] = None, resume: bool = True) -> List[Dict]:
         """Process gear items with progress tracking, error recovery, and resume capability"""
-        gear_items = self.collect_gear_items(filter_pattern)
+        gear_items = self.collect_gear_items(filter_pattern, exclude_patterns)
         
         print(f"Found {len(gear_items)} gear items to process")
         
+        if exclude_patterns:
+            print(f"🚫 Excluding items containing: {', '.join(exclude_patterns)}")
+        
         all_changes = []
         failed_items = []
+        skipped_items = []
         start_index = 0
         
         # Check for resume capability
@@ -473,6 +566,13 @@ JSON for {item_name}:"""
             
             try:
                 current_data = self.extract_current_data(item)
+                
+                # Double-check nominal=0 (safety check)
+                if int(current_data['nominal']) == 0:
+                    skipped_items.append(name)
+                    print(f"  ⏭️  Skipped (nominal=0)")
+                    continue
+                
                 analysis = self.analyze_single_gear(name, current_data)
                 
                 if analysis and self.validate_analysis_structure(analysis):
@@ -510,11 +610,17 @@ JSON for {item_name}:"""
         
         print(f"\n🎉 Processing Complete!")
         print(f"✅ Successfully processed: {len(all_changes) - len(failed_items)} items")
+        print(f"⏭️  Skipped (nominal=0): {len(skipped_items)} items")
         if failed_items:
             print(f"⚠ Failed items: {len(failed_items)} - {', '.join(failed_items[:5])}{'...' if len(failed_items) > 5 else ''}")
         
-        return all_changes
-    
+        if skipped_items and len(skipped_items) <= 10:
+            print(f"📋 Skipped items: {', '.join(skipped_items)}")
+        elif skipped_items:
+            print(f"📋 Skipped items: {', '.join(skipped_items[:10])}... and {len(skipped_items) - 10} more")
+        
+        return all_changes   
+
     def apply_gear_analysis(self, item: ET.Element, analysis: Dict) -> Dict:
         """Apply the AI analysis to a gear item with enhanced logic"""
         name = item.get('name')
@@ -961,7 +1067,6 @@ def generate_batch_summary(reports: List[Dict], successful: List[str], failed: L
     
     return summary
 
-
 def main():
     """Enhanced main execution with single and batch processing options"""
     print("🎒 DayZ Gear & Equipment Balancer with Ollama AI")
@@ -992,7 +1097,7 @@ def main():
             traceback.print_exc()
         return
     
-    # Single file processing (original code)
+    # Single file processing with enhanced filtering
     try:
         # Test Ollama connection
         print("🔍 Testing Ollama connection...")
@@ -1025,40 +1130,127 @@ def main():
         balancer = OptimizedOllamaGearBalancer(xml_file)
         
         # Get filter options
-        filter_mod = input("🔍 Filter by item name (e.g., 'Backpack' or press Enter for all gear): ").strip()
+        print("\n🔍 FILTERING OPTIONS:")
+        filter_mod = input("Include only items containing (e.g., 'Backpack' or press Enter for all): ").strip()
         filter_pattern = filter_mod if filter_mod else None
         
-        if filter_pattern:
-            preview_items = balancer.collect_gear_items(filter_pattern)
-            print(f"📊 Found {len(preview_items)} gear items matching '{filter_pattern}'")
-            if len(preview_items) == 0:
-                print("❌ No gear items found with that filter. Exiting.")
-                return
-        else:
-            preview_items = balancer.collect_gear_items()
-            print(f"📊 Found {len(preview_items)} total gear items to process")
+        # Get exclusion patterns
+        print("\n🚫 EXCLUSION OPTIONS:")
+        print("💡 Tip: Enter comma-separated patterns to exclude multiple item types")
+        print("   Examples:")
+        print("     'Weapon,Ammo,Gun' - exclude all weapons and ammo")
+        print("     'Base,Wall,Gate,Fence' - exclude base building items")
+        print("     'Medical,Food,Drink' - exclude consumables")
+        print("     'Ruined,Damaged' - exclude damaged items")
+        exclude_input = input("Exclude items containing (or press Enter to skip): ").strip()
+        exclude_patterns = []
+        if exclude_input:
+            exclude_patterns = [pattern.strip() for pattern in exclude_input.split(',') if pattern.strip()]
+            print(f"✅ Will exclude items containing: {', '.join(exclude_patterns)}")
+        
+        # Show items with nominal=0 that will be automatically skipped
+        print("\n⏭️  AUTOMATIC EXCLUSIONS:")
+        all_items_for_preview = balancer.root.findall('type')
+        nominal_zero_items = []
+        invalid_nominal_items = []
+        
+        for item in all_items_for_preview:
+            name = item.get('name')
+            nominal_elem = item.find('nominal')
+            if nominal_elem is not None:
+                try:
+                    nominal_value = int(nominal_elem.text)
+                    if nominal_value == 0:
+                        nominal_zero_items.append(name)
+                except (ValueError, TypeError):
+                    invalid_nominal_items.append(name)
+        
+        if nominal_zero_items:
+            print(f"   📊 Found {len(nominal_zero_items)} items with nominal=0 (will be auto-skipped)")
+            if len(nominal_zero_items) <= 15:
+                print(f"   Items: {', '.join(nominal_zero_items)}")
+            else:
+                print(f"   Sample: {', '.join(nominal_zero_items[:15])}... and {len(nominal_zero_items) - 15} more")
+        
+        if invalid_nominal_items:
+            print(f"   ⚠️  Found {len(invalid_nominal_items)} items with invalid nominal values (will be auto-skipped)")
+            if len(invalid_nominal_items) <= 10:
+                print(f"   Items: {', '.join(invalid_nominal_items)}")
+        
+        # Preview what will be processed after all filtering
+        print("\n📊 PROCESSING PREVIEW:")
+        preview_items = balancer.collect_gear_items(filter_pattern, exclude_patterns)
+        print(f"Found {len(preview_items)} gear items to process after all filtering")
+        
+        if len(preview_items) == 0:
+            print("❌ No gear items found with current filters. Exiting.")
+            return
         
         # Show categories that will be processed
         categories = set()
-        for item in preview_items[:20]:  # Sample first 20 items
+        item_types_preview = {}
+        for item in preview_items:
             category_elem = item.find('category')
             if category_elem is not None:
-                categories.add(category_elem.get('name', 'unknown'))
+                cat_name = category_elem.get('name', 'unknown')
+                categories.add(cat_name)
+                item_types_preview[cat_name] = item_types_preview.get(cat_name, 0) + 1
         
-        print(f"📂 Categories to process: {', '.join(sorted(categories))}")
+        print(f"📂 Categories to process:")
+        for category, count in sorted(item_types_preview.items()):
+            print(f"   • {category}: {count} items")
+        
+        # Show sample of items that will be processed
+        if len(preview_items) <= 20:
+            print("\n📋 All items to process:")
+            for item in preview_items:
+                name = item.get('name')
+                nominal_elem = item.find('nominal')
+                nominal = nominal_elem.text if nominal_elem is not None else "?"
+                category_elem = item.find('category')
+                category = category_elem.get('name') if category_elem is not None else "unknown"
+                print(f"   • {name:<30} (Nom: {nominal:>3}, Cat: {category})")
+        else:
+            print(f"\n📋 Sample items to process (showing first 20 of {len(preview_items)}):")
+            for item in preview_items[:20]:
+                name = item.get('name')
+                nominal_elem = item.find('nominal')
+                nominal = nominal_elem.text if nominal_elem is not None else "?"
+                category_elem = item.find('category')
+                category = category_elem.get('name') if category_elem is not None else "unknown"
+                print(f"   • {name:<30} (Nom: {nominal:>3}, Cat: {category})")
+            print(f"   ... and {len(preview_items) - 20} more items")
         
         # Confirm processing
-        print(f"\n🚀 Ready to process with model: {balancer.model}")
-        print("💡 This will analyze backpacks, clothing, containers, and equipment")
-        if input("Continue? (y/n): ").lower() != 'y':
+        print(f"\n🚀 READY TO PROCESS:")
+        print(f"   Model: {balancer.model}")
+        print(f"   Items to process: {len(preview_items)}")
+        print(f"   Items to skip (nominal=0): {len(nominal_zero_items)}")
+        if exclude_patterns:
+            print(f"   Exclusion filters: {', '.join(exclude_patterns)}")
+        if filter_pattern:
+            print(f"   Include filter: {filter_pattern}")
+        
+        print("\n💡 This will analyze backpacks, clothing, containers, and equipment")
+        print("⚠️  Items with nominal=0 will be automatically skipped")
+        
+        if input("\nContinue with processing? (y/n): ").lower() != 'y':
+            print("❌ Processing cancelled by user")
             return
         
         print("\n" + "="*60)
         print("🔄 PROCESSING GEAR & EQUIPMENT...")
         print("="*60)
         
-        # Process gear items
-        changes = balancer.process_gear_with_progress(filter_pattern=filter_pattern)
+        # Process gear items with enhanced filtering
+        changes = balancer.process_gear_with_progress(
+            filter_pattern=filter_pattern, 
+            exclude_patterns=exclude_patterns
+        )
+        
+        if not changes:
+            print("❌ No items were processed successfully.")
+            return
         
         # Generate report
         print("\n📊 Generating comprehensive gear report...")
@@ -1086,23 +1278,61 @@ def main():
         # Show quick statistics
         successful = [c for c in changes if c['applied']]
         tier_counts = {}
+        category_counts = {}
+        nominal_changes = 0
+        
         for change in successful:
             tier = change['analysis']['tier']
+            category = change['analysis'].get('category', 'unknown')
             tier_counts[tier] = tier_counts.get(tier, 0) + 1
+            category_counts[category] = category_counts.get(category, 0) + 1
+            
+            # Count nominal changes
+            old_nominal = int(change['original']['nominal'])
+            new_nominal = change['analysis']['nominal']
+            if old_nominal != new_nominal:
+                nominal_changes += 1
         
-        print(f"\n🎯 QUICK STATS:")
+        print(f"\n🎯 PROCESSING STATISTICS:")
         print(f"   ✅ Successfully processed: {len(successful)} items")
+        print(f"   ⏭️  Skipped (nominal=0): {len(nominal_zero_items)} items")
+        print(f"   🔄 Nominal values changed: {nominal_changes} items")
         print(f"   🏷️  Tier distribution: {dict(sorted(tier_counts.items()))}")
+        print(f"   📂 Category distribution: {dict(sorted(category_counts.items()))}")
+        
+        # Show tier distribution with percentages
+        print(f"\n📈 DETAILED TIER BREAKDOWN:")
+        tier_names = {1: "Civilian", 2: "Police", 3: "Military", 4: "High-end", 5: "Extreme"}
+        for tier in sorted(tier_counts.keys()):
+            count = tier_counts[tier]
+            percentage = (count / len(successful)) * 100
+            tier_name = tier_names.get(tier, f"Tier{tier}")
+            print(f"   Tier {tier} ({tier_name:>8}): {count:>3} items ({percentage:>5.1f}%)")
         
         # Save XML option
         print(f"\n💾 Processing complete! {len(changes)} gear items processed.")
-        if input("Save balanced XML file? (y/n): ").lower() == 'y':
-            output_file = balancer.save_balanced_xml()
-            print(f"✅ Balanced XML saved to: {output_file}")
-            print("💡 Remember to backup your original types.xml before using!")
-           
+        save_choice = input("Save balanced XML file? (y/n): ").lower()
+        
+        if save_choice == 'y':
+            try:
+                output_file = balancer.save_balanced_xml()
+                print(f"✅ Balanced XML saved to: {output_file}")
+                print("💡 Remember to backup your original types.xml before using!")
+                
+                # Show backup info
+                print("\n📁 FILES CREATED:")
+                print(f"   📄 Report: {report_path}")
+                print(f"   💾 Balanced XML: {output_file}")
+                backup_files = list(Path('.').glob(f'{input_name}_backup_*.xml'))
+                if backup_files:
+                    latest_backup = max(backup_files, key=lambda f: f.stat().st_mtime)
+                    print(f"   🔒 Backup: {latest_backup}")
+                
+            except Exception as e:
+                print(f"❌ Error saving XML: {e}")
+        
         # Offer to open report
-        if input("📖 Open report file? (y/n): ").lower() == 'y':
+        if input("\n📖 Open report file? (y/n): ").lower() == 'y':
             import os
             import subprocess
             import platform
@@ -1114,12 +1344,25 @@ def main():
                     subprocess.run(['open', report_path])
                 else:  # Linux
                     subprocess.run(['xdg-open', report_path])
+                print(f"📖 Opening report file...")
             except Exception as e:
                 print(f"Could not open file automatically: {e}")
                 print(f"📁 You can manually open: {report_path}")
-       
+        
+        # Show final summary and tips
         print("\n🎉 All done! Your DayZ gear is now perfectly balanced!")
-        print("💡 Pro tip: Review the report before applying changes to your server")
+        print("\n💡 NEXT STEPS:")
+        print("   1. Review the detailed report for any unexpected changes")
+        print("   2. Test the balanced XML on a development server first")
+        print("   3. Monitor server performance after deployment")
+        print("   4. Keep your backup files safe")
+        
+        if nominal_zero_items:
+            print(f"\n📌 NOTE: {len(nominal_zero_items)} items with nominal=0 were automatically skipped")
+            print("   These items are typically disabled and should remain untouched")
+        
+        if exclude_patterns:
+            print(f"\n🚫 EXCLUDED: Items containing {', '.join(exclude_patterns)} were skipped as requested")
        
     except KeyboardInterrupt:
         print("\n⚠️ Process interrupted by user")
