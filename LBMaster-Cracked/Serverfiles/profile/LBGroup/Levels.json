@@ -1,0 +1,56 @@
+[
+    {
+        "level": 0,
+        "maxPlayerCount": 3,
+        "upgradeCost": 0,
+        "subgroupCount": 2,
+        "subgroupSize": 3,
+        "groupMarkerLimitAdded": 0,
+        "groupPlotpolesLimitAdded": 0
+    },
+    {
+        "level": 1,
+        "maxPlayerCount": 5,
+        "upgradeCost": 8000,
+        "subgroupCount": 3,
+        "subgroupSize": 3,
+        "groupMarkerLimitAdded": 5,
+        "groupPlotpolesLimitAdded": 0
+    },
+    {
+        "level": 2,
+        "maxPlayerCount": 8,
+        "upgradeCost": 20000,
+        "subgroupCount": 4,
+        "subgroupSize": 4,
+        "groupMarkerLimitAdded": 10,
+        "groupPlotpolesLimitAdded": 0
+    },
+    {
+        "level": 3,
+        "maxPlayerCount": 12,
+        "upgradeCost": 40000,
+        "subgroupCount": 5,
+        "subgroupSize": 4,
+        "groupMarkerLimitAdded": 15,
+        "groupPlotpolesLimitAdded": 1
+    },
+    {
+        "level": 4,
+        "maxPlayerCount": 16,
+        "upgradeCost": 60000,
+        "subgroupCount": 5,
+        "subgroupSize": 5,
+        "groupMarkerLimitAdded": 20,
+        "groupPlotpolesLimitAdded": 1
+    },
+    {
+        "level": 5,
+        "maxPlayerCount": 20,
+        "upgradeCost": 100000,
+        "subgroupCount": 6,
+        "subgroupSize": 5,
+        "groupMarkerLimitAdded": 30,
+        "groupPlotpolesLimitAdded": 2
+    }
+]

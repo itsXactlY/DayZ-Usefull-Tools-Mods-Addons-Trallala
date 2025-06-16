@@ -1,0 +1,147 @@
+[
+    {
+        "UID": 1,
+        "nextGroupUID": 3,
+        "previousGroupUID": -1,
+        "inheritGroupUID": -1,
+        "permName": "Temp",
+        "markerPermissions": [
+            {
+                "param1": 0,
+                "param2": 1
+            },
+            {
+                "param1": 1,
+                "param2": 1
+            },
+            {
+                "param1": 2,
+                "param2": 1
+            },
+            {
+                "param1": 3,
+                "param2": 0
+            },
+            {
+                "param1": 5,
+                "param2": 1
+            },
+            {
+                "param1": 4,
+                "param2": 1
+            }
+        ],
+        "canUpgrade": 0,
+        "canPromote": 0,
+        "canDemote": 0,
+        "canInvite": 0,
+        "promotePower": 0,
+        "demotePower": 0,
+        "promoteNeedPower": 20,
+        "demoteNeedPower": 20,
+        "canDoBasebuilding": 0,
+        "canPackPlotpole": 0,
+        "canCreateSeeATMAccount": 0,
+        "canCreateGroupATMAccount": 0,
+        "canWithdrawGroupMoney": 0,
+        "canDepositGroupMoney": 0,
+        "tempGroup": 1
+    },
+    {
+        "UID": 3,
+        "nextGroupUID": 5,
+        "previousGroupUID": 1,
+        "inheritGroupUID": 1,
+        "permName": "Trial",
+        "markerPermissions": [],
+        "canUpgrade": 0,
+        "canPromote": 0,
+        "canDemote": 0,
+        "canInvite": 0,
+        "promotePower": 0,
+        "demotePower": 0,
+        "promoteNeedPower": 0,
+        "demoteNeedPower": 0,
+        "canDoBasebuilding": 0,
+        "canPackPlotpole": 0,
+        "canCreateSeeATMAccount": 0,
+        "canCreateGroupATMAccount": 0,
+        "canWithdrawGroupMoney": 0,
+        "canDepositGroupMoney": 0,
+        "tempGroup": 0
+    },
+    {
+        "UID": 5,
+        "nextGroupUID": 7,
+        "previousGroupUID": 3,
+        "inheritGroupUID": 3,
+        "permName": "Member",
+        "markerPermissions": [
+            {
+                "param1": 3,
+                "param2": 1
+            }
+        ],
+        "canUpgrade": 0,
+        "canPromote": 0,
+        "canDemote": 0,
+        "canInvite": 0,
+        "promotePower": 0,
+        "demotePower": 0,
+        "promoteNeedPower": 0,
+        "demoteNeedPower": 0,
+        "canDoBasebuilding": 1,
+        "canPackPlotpole": 0,
+        "canCreateSeeATMAccount": 1,
+        "canCreateGroupATMAccount": 1,
+        "canWithdrawGroupMoney": 1,
+        "canDepositGroupMoney": 1,
+        "tempGroup": 0
+    },
+    {
+        "UID": 7,
+        "nextGroupUID": 9,
+        "previousGroupUID": 5,
+        "inheritGroupUID": 5,
+        "permName": "Admin",
+        "markerPermissions": [],
+        "canUpgrade": 1,
+        "canPromote": 1,
+        "canDemote": 1,
+        "canInvite": 1,
+        "promotePower": 30,
+        "demotePower": 30,
+        "promoteNeedPower": 40,
+        "demoteNeedPower": 40,
+        "canDoBasebuilding": 0,
+        "canPackPlotpole": 1,
+        "canCreateSeeATMAccount": 0,
+        "canCreateGroupATMAccount": 0,
+        "canWithdrawGroupMoney": 0,
+        "canDepositGroupMoney": 0,
+        "tempGroup": 0
+    },
+    {
+        "UID": 9,
+        "nextGroupUID": -1,
+        "previousGroupUID": 7,
+        "inheritGroupUID": 7,
+        "permName": "Leader",
+        "markerPermissions": [],
+        "canUpgrade": 0,
+        "canPromote": 0,
+        "canDemote": 0,
+        "canInvite": 0,
+        "promotePower": 40,
+        "demotePower": 40,
+        "promoteNeedPower": 50,
+        "demoteNeedPower": 50,
+        "canDoBasebuilding": 0,
+        "canPackPlotpole": 0,
+        "canCreateSeeATMAccount": 0,
+        "canCreateGroupATMAccount": 0,
+        "canWithdrawGroupMoney": 0,
+        "canDepositGroupMoney": 0,
+        "tempGroup": 0
+    }
+]

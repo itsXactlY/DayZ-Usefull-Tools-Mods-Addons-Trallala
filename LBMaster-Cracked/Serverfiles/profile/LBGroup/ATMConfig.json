@@ -1,0 +1,70 @@
+{
+    "importFromDeadcraftBanking": 0,
+    "importFromKRBanking": 0,
+    "configVersion": 0,
+    "personalATMAccountEnabled": 1,
+    "personalATMAccountMaxMoney": 100000,
+    "personalATMStartMoney": 1000,
+    "transactionDelayMS": 2000,
+    "paycheckAmount": 200,
+    "paycheckIntervalMinutes": 20,
+    "paycheckMultiplier": 1,
+    "paycheckMultiplierEnd": 0,
+    "currencySuffix": "$",
+    "hintRobAmount": 0,
+    "robMinimalAvailableMoney": 1000,
+    "markRobbedATMOnMap": 1,
+    "robmarkerName": "ATM Robbed by $PLAYERNAME$",
+    "robmarkerIcon": "LBmaster_Groups_ATM/gui/icons/gun.paa",
+    "notifyAllPlayersWhenATMIsRobbed": 1,
+    "robbingTimeMinutes": 15,
+    "minPlayersOnlineToStartRobbing": 25,
+    "robbingStartNotificationMessage": "ATM is beeing robbed by $PLAYERNAME$ at %ATM_POSITION%",
+    "robbingFinishedNotificationMessage": "ATM was robbed by $PLAYERNAME$ at %ATM_POSITION% he got %MONEY%$ !",
+    "robAmountHints": [
+        {
+            "minMoney": 0,
+            "description": "Low"
+        },
+        {
+            "minMoney": 7500,
+            "description": "Medium"
+        },
+        {
+            "minMoney": 15000,
+            "description": "High"
+        }
+    ],
+    "currencyValues": [
+        {
+            "itemclassname": "MoneyRuble1",
+            "value": 1
+        },
+        {
+            "itemclassname": "MoneyRuble5",
+            "value": 5
+        },
+        {
+            "itemclassname": "MoneyRuble10",
+            "value": 10
+        },
+        {
+            "itemclassname": "MoneyRuble25",
+            "value": 25
+        },
+        {
+            "itemclassname": "MoneyRuble50",
+            "value": 50
+        },
+        {
+            "itemclassname": "MoneyRuble100",
+            "value": 100
+        }
+    ],
+    "belowValuesOnlyApplyWhenUsing_AdvancedGroups_Mod": 1,
+    "groupATMAccountEnabled": 0,
+    "groupATMCreationCost": 10000,
+    "groupATMAccountBaseMoney": 20000,
+    "groupATMAccountPerPlayer": 25000,
+    "groupATMMinPlayers": 2
+}

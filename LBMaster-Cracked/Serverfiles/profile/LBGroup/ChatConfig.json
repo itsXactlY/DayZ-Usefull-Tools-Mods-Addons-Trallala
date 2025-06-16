@@ -1,0 +1,75 @@
+{
+    "currentVersion": 1,
+    "displayGroupTagsInfrontOfName": 1,
+    "enableGlobalChatFeature": 1,
+    "enableMuteVote": 0,
+    "muteVoteMinPlayers": 20,
+    "muteVoteMuteTimeMins": 10,
+    "muteVotePercentile": 0.6000000238418579,
+    "channels": [
+        {
+            "channelName": "Direct",
+            "channelColor": {
+                "a": 255,
+                "r": 255,
+                "g": 255,
+                "b": 255
+            },
+            "globalChannel": 0,
+            "groupChannel": 0,
+            "directChannel": 1,
+            "defaultChannel": 0
+        },
+        {
+            "channelName": "Global",
+            "channelColor": {
+                "a": 255,
+                "r": 3,
+                "g": 180,
+                "b": 252
+            },
+            "globalChannel": 1,
+            "groupChannel": 0,
+            "directChannel": 0,
+            "defaultChannel": 1
+        },
+        {
+            "channelName": "Group",
+            "channelColor": {
+                "a": 255,
+                "r": 3,
+                "g": 252,
+                "b": 15
+            },
+            "globalChannel": 0,
+            "groupChannel": 1,
+            "directChannel": 0,
+            "defaultChannel": 0
+        }
+    ],
+    "muteAdmins": [
+        "76561198141097113",
+        "More Steamids"
+    ],
+    "mutedPlayers": [],
+    "prefixGroups": [
+        {
+            "prefix": "[Admin] ",
+            "colorR": 255,
+            "colorG": 0,
+            "colorB": 0,
+            "members": [
+                "76561198141097113",
+                "More Steamids"
+            ]
+        }
+    ],
+    "badWords": [
+        "nigger",
+        "nazi"
+    ],
+    "enabledBadWordsCensor": 0,
+    "blockBadWordContainingMessages": 0,
+    "badWordsBlockedMessage": "Your Message contains Bad Words !",
+    "badWordsMuteTime": 10
+}

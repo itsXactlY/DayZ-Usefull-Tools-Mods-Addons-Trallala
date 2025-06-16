@@ -1,0 +1,40 @@
+[
+    {
+        "type": 0,
+        "uid": 100,
+        "name": "Green Mountain Trader",
+        "icon": "DZ\\gear\\navigation\\data\\map_tree_ca.paa",
+        "position": [
+            3714.0,
+            0.0,
+            5998.0
+        ],
+        "currentSubgroup": 0,
+        "colorA": 255,
+        "colorR": 0,
+        "colorG": 255,
+        "colorB": 0,
+        "toSurface": 1,
+        "display3d": 1,
+        "displayMap": 1
+    },
+    {
+        "type": 0,
+        "uid": 101,
+        "name": "Toxic Zone",
+        "icon": "DZ\\gear\\navigation\\data\\map_tree_ca.paa",
+        "position": [
+            1590.0,
+            0.0,
+            14123.0
+        ],
+        "currentSubgroup": 0,
+        "colorA": 255,
+        "colorR": 255,
+        "colorG": 0,
+        "colorB": 0,
+        "toSurface": 1,
+        "display3d": 1,
+        "displayMap": 1
+    }
+]

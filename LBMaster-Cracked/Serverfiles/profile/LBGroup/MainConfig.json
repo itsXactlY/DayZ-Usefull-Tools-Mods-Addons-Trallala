@@ -1,0 +1,172 @@
+{
+    "configVersion": 5,
+    "serverLogoPath": "",
+    "canSeeOwnPlayerOnMap": 1,
+    "ownPlayerIconPath": "DZ\\gear\\navigation\\data\\map_tree_ca.paa",
+    "otherPlayerIconsPath": "DZ\\gear\\navigation\\data\\map_tree_ca.paa",
+    "inactiveGroupLifetimeDays": 30,
+    "tacticalPingLifetimeSeconds": 8,
+    "inviteCooldownSeconds": 120,
+    "inviteMaxDistance": -1.0,
+    "inviteActionEnabled": 0,
+    "inviteActionShowName": 0,
+    "markerConfig": [
+        {
+            "type": 0,
+            "typeString": "SERVER_STATIC",
+            "maxDistance": -1,
+            "display3d": 1,
+            "displayDistance": 1,
+            "displayMap": 1,
+            "displayCompass": 0
+        },
+        {
+            "type": 1,
+            "typeString": "SERVER_DYNAMIC",
+            "maxDistance": -1,
+            "display3d": 1,
+            "displayDistance": 1,
+            "displayMap": 1,
+            "displayCompass": 0
+        },
+        {
+            "type": 2,
+            "typeString": "GROUP_PING",
+            "maxDistance": -1,
+            "display3d": 1,
+            "displayDistance": 0,
+            "displayMap": 0,
+            "displayCompass": 1
+        },
+        {
+            "type": 3,
+            "typeString": "GROUP_MARKER",
+            "maxDistance": -1,
+            "display3d": 1,
+            "displayDistance": 1,
+            "displayMap": 1,
+            "displayCompass": 0
+        },
+        {
+            "type": 5,
+            "typeString": "PRIVATE_MARKER",
+            "maxDistance": -1,
+            "display3d": 1,
+            "displayDistance": 1,
+            "displayMap": 1,
+            "displayCompass": 0
+        },
+        {
+            "type": 4,
+            "typeString": "GROUP_PLAYER_MARKER",
+            "maxDistance": 2000,
+            "display3d": 1,
+            "displayDistance": 0,
+            "displayMap": 1,
+            "displayCompass": 1
+        }
+    ],
+    "availableIcons": [
+        "LBmaster_Groups\\gui\\icons\\marker.paa",
+        "LBmaster_Groups\\gui\\icons\\marker-stroked.paa",
+        "LBmaster_Groups\\gui\\icons\\cross.paa",
+        "LBmaster_Groups\\gui\\icons\\home.paa",
+        "LBmaster_Groups\\gui\\icons\\camp.paa",
+        "LBmaster_Groups\\gui\\icons\\hospital.paa",
+        "LBmaster_Groups\\gui\\icons\\flag.paa",
+        "LBmaster_Groups\\gui\\icons\\star.paa",
+        "LBmaster_Groups\\gui\\icons\\car.paa",
+        "LBmaster_Groups\\gui\\icons\\parking.paa",
+        "LBmaster_Groups\\gui\\icons\\heli.paa",
+        "LBmaster_Groups\\gui\\icons\\rail.paa",
+        "LBmaster_Groups\\gui\\icons\\ship.paa",
+        "LBmaster_Groups\\gui\\icons\\scooter.paa",
+        "LBmaster_Groups\\gui\\icons\\bank.paa",
+        "LBmaster_Groups\\gui\\icons\\restaurant.paa",
+        "LBmaster_Groups\\gui\\icons\\post.paa",
+        "LBmaster_Groups\\gui\\icons\\castle.paa",
+        "LBmaster_Groups\\gui\\icons\\ranger-station.paa",
+        "LBmaster_Groups\\gui\\icons\\water.paa",
+        "LBmaster_Groups\\gui\\icons\\triangle.paa",
+        "LBmaster_Groups\\gui\\icons\\cow.paa",
+        "LBmaster_Groups\\gui\\icons\\bear.paa",
+        "LBmaster_Groups\\gui\\icons\\car-repair.paa",
+        "LBmaster_Groups\\gui\\icons\\communications.paa",
+        "LBmaster_Groups\\gui\\icons\\roadblock.paa",
+        "LBmaster_Groups\\gui\\icons\\stadium.paa",
+        "LBmaster_Groups\\gui\\icons\\skull.paa",
+        "LBmaster_Groups\\gui\\icons\\rocket.paa",
+        "LBmaster_Groups\\gui\\icons\\bbq.paa",
+        "LBmaster_Groups\\gui\\icons\\ping.paa"
+    ],
+    "customMapLayoutFolder": "",
+    "customPlayerlistLayoutFolder": "",
+    "customCompassLayoutFolder": "",
+    "layoutStyles": [
+        {
+            "entryName": "Map Layout",
+            "styles": [
+                "default"
+            ]
+        },
+        {
+            "entryName": "Compass Layout",
+            "styles": [
+                "default"
+            ]
+        },
+        {
+            "entryName": "Player List",
+            "styles": [
+                "default",
+                "small",
+                "tiny"
+            ]
+        }
+    ],
+    "enableCompassHud": 1,
+    "enablePlayerList": 1,
+    "enablePlayerListDistance": 1,
+    "enableSubGroups": 1,
+    "enableSubGroupSharedPlayerMapMarker": 0,
+    "enableSubGroupSharedPingMapMarker": 0,
+    "enableInfoPanelSurvivorCount": 1,
+    "enableInfoPanelCursorCoordinates": 1,
+    "enableInfoPanelIngameTime": 1,
+    "enableInfoPanelRealTime": 1,
+    "disableInfoPanelModCreatorMention": 0,
+    "groupMarkerLimit": 20,
+    "adminSteamids": [
+        "76561198141097113"
+    ],
+    "offlinePlayer3dMarkerDistance": 20.0,
+    "subGroupNames": [
+        "Alpha",
+        "Bravo",
+        "Charlie",
+        "Delta",
+        "Echo",
+        "Foxtrot",
+        "Golf",
+        "Hotel",
+        "India",
+        "Juliett"
+    ],
+    "buttonConfig": [
+        {
+            "buttonName": "Website",
+            "subtext": "musterseite.de",
+            "link": "google.com"
+        },
+        {
+            "buttonName": "Teamspeak",
+            "subtext": "teamspeak.com",
+            "link": "ts3server://teamspeak.com"
+        },
+        {
+            "buttonName": "Donate",
+            "subtext": "Donate via PayPal",
+            "link": "paypal.me/lbmaster"
+        }
+    ]
+}
